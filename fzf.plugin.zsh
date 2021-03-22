@@ -148,7 +148,7 @@ function setup_using_openbsd_package() {
 
 function indicate_error() {
     cat >&2 <<EOF
-[oh-my-zsh] fzf plugin: Cannot find fzf installation directory.
+fzf plugin: Cannot find fzf installation directory.
 Please add \`export FZF_BASE=/path/to/fzf/install/dir\` to your .zshrc
 EOF
 }
