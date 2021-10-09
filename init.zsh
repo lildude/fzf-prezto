@@ -25,6 +25,16 @@ if zstyle -t ':prezto:module:fzf' reverse 'yes'; then
   export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --reverse"
 fi
 
+# Set preview
+if zstyle -t ':prezto:module:fzf' preview 'yes'; then
+  # Use preview window with Ctrl-T
+  export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+  # If tree command is installed, show directory contents in preview pane when use Alt-C
+  if (( $+commands[tree] )); then
+	export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+  fi
+fi
+
 # Set height of fzf results
 zstyle -s ':prezto:module:fzf' height FZF_HEIGHT
 

@@ -38,6 +38,9 @@ zstyle ':prezto:module:fzf' disable-completion 'yes'
 # Set height of the fzf results - default: full height
 zstyle ':prezto:module:fzf' height '30%'
 
+# Show file preview with ctrl+t and directory contents preview (needs tree) with alt-c
+zstyle ':prezto:module:fzf' preview 'yes'
+
 # Open fzf results in a tmux pane, if using tmux - default: no
 zstyle ':prezto:module:fzf' tmux 'yes'
 
